@@ -82,17 +82,13 @@ public class Main {
         }
     }
 
-    public static String converterToRim(int value) {
 
-        return null;
-    }
-
-    public static boolean isCheckLineLength(String[] q) throws Exception {
+    private static boolean isCheckLineLength(String[] q) throws Exception {
         if (q.length != 3) {
             return false;
         } else return true;
     }
-    public static boolean isCheckLineArab(String[] q) throws Exception {
+    private static boolean isCheckLineArab(String[] q) throws Exception {
         Arrays.sort(arab);
         if ((Arrays.binarySearch(arab, q[0]) >= 0) && (Arrays.binarySearch(arab, q[2]) >= 0)) {
             calc(inputValue, true);
@@ -100,7 +96,7 @@ public class Main {
         }
         return false;
     }
-    public static boolean isCheckLineRim(String[] q) throws Exception {
+    private static boolean isCheckLineRim(String[] q) throws Exception {
         int firstIndex = -1;
         int secondIndex = -1;
         for (int w = 0; w < rim.length; w++){
@@ -119,7 +115,7 @@ public class Main {
         }
         return false;
     }
-    public static boolean isCheckLineSymbol(String[] q) {
+    private static boolean isCheckLineSymbol(String[] q) {
         Arrays.sort(symbol);
         if (Arrays.binarySearch(symbol, q[1]) < 0) {
             return false;
@@ -127,7 +123,7 @@ public class Main {
         return true;
     }
 
-    public static class RomanNumber {
+    private static class RomanNumber {
 
         private final static TreeMap<Integer, String> map = new TreeMap<Integer, String>();
 
@@ -149,7 +145,7 @@ public class Main {
 
         }
 
-        public final static String toRoman(int number) {
+        private final static String toRoman(int number) {
             int l = map.floorKey(number);
             if (number == l) {
                 return map.get(number);
